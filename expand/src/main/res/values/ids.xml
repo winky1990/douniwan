@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <item type="id" name="hierarchy"></item>
+    <item type="id" name="isexpand"></item>
+    
+    <item name="text1" type="id" />
+    <item name="text2" type="id" />
+    <item name="text3" type="id" />
+    <item name="text4" type="id" />
+    <item name="text5" type="id" />
+    <item name="text6" type="id" />
+    <item name="text7" type="id" />
+    <item name="text8" type="id" />
+    <item name="text9" type="id" />
+    <item name="text10" type="id" />
+    <item name="text11" type="id" />
+    <item name="text12" type="id" />
+    <item name="text13" type="id" />
+    <item name="text14" type="id" />
+    <item name="text15" type="id" />
+    <item name="text16" type="id" />
+    <item name="text17" type="id" />
+    <item name="text18" type="id" />
+    <item name="text19" type="id" />
+    <item name="text20" type="id" />
+    
+    <item name="edit1" type="id" />
+    <item name="edit2" type="id" />
+    <item name="edit4" type="id" />
+    <item name="edit5" type="id" />
+    <item name="edit6" type="id" />
+    <item name="edit7" type="id" />
+    <item name="edit8" type="id" />
+    <item name="edit9" type="id" />
+    <item name="edit10" type="id" />
+    
+    <item name="image1" type="id" />
+    <item name="image2" type="id" />
+    <item name="image3" type="id" />
+    <item name="image4" type="id" />
+    <item name="image5" type="id" />
+    <item name="image6" type="id" />
+    <item name="image7" type="id" />
+    <item name="image8" type="id" />
+    <item name="image9" type="id" />
+    <item name="image10" type="id" />
+    
+    <item name="radioGroup1" type="id" />
+    <item name="radioGroup2" type="id" />
+    <item name="radioGroup3" type="id" />
+    <item name="radioGroup4" type="id" />
+    <item name="radioGroup5" type="id" />
+    <item name="radioGroup6" type="id" />
+    <item name="radioGroup7" type="id" />
+    <item name="radioGroup8" type="id" />
+    
+    <item name="radioButton11" type="id" />
+    <item name="radioButton12" type="id" />
+    <item name="radioButton13" type="id" />
+    <item name="radioButton14" type="id" />
+    <item name="radioButton15" type="id" />
+    
+    <item name="radioButton21" type="id" />
+    <item name="radioButton22" type="id" />
+    <item name="radioButton23" type="id" />
+    <item name="radioButton24" type="id" />
+    <item name="radioButton25" type="id" />
+    <item name="radioButton26" type="id" />
+    
+    <item name="radioButton31" type="id" />
+    <item name="radioButton32" type="id" />
+    <item name="radioButton33" type="id" />
+    <item name="radioButton34" type="id" />
+    <item name="radioButton35" type="id" />
+    <item name="radioButton36" type="id" />
+    
+    <item name="radioButton41" type="id" />
+    <item name="radioButton42" type="id" />
+    <item name="radioButton43" type="id" />
+    <item name="radioButton44" type="id" />
+    <item name="radioButton45" type="id" />
+    
+    <item name="radioButton51" type="id" />
+    <item name="radioButton52" type="id" />
+    <item name="radioButton53" type="id" />
+    <item name="radioButton54" type="id" />
+    <item name="radioButton55" type="id" />
+    
+    <item name="radioButton61" type="id" />
+    <item name="radioButton62" type="id" />
+    <item name="radioButton63" type="id" />
+    <item name="radioButton64" type="id" />
+    <item name="radioButton65" type="id" />
+    
+    <item name="radioButton71" type="id" />
+    <item name="radioButton72" type="id" />
+    <item name="radioButton73" type="id" />
+    <item name="radioButton74" type="id" />
+    <item name="radioButton75" type="id" />
+    
+    <item name="radioButton81" type="id" />
+    <item name="radioButton82" type="id" />
+    <item name="radioButton83" type="id" />
+    <item name="radioButton84" type="id" />
+    <item name="radioButton85" type="id" />
+    
+    <item name="radioButton91" type="id" />
+    <item name="radioButton92" type="id" />
+    <item name="radioButton93" type="id" />
+    <item name="radioButton94" type="id" />
+    <item name="radioButton95" type="id" />
+    
+    <item name="progressBar1" type="id" />
+    <item name="progressBar2" type="id" />
+    <item name="progressBar3" type="id" />
+    <item name="progressBar4" type="id" />
+    <item name="progressBar5" type="id" />
+    
+    <item name="frame1" type="id" />
+    <item name="frame2" type="id" />
+    <item name="frame3" type="id" />
+    <item name="frame4" type="id" />
+    <item name="frame5" type="id" />
+    
+    <item name="linear1" type="id" />
+    <item name="linear2" type="id" />
+    <item name="linear3" type="id" />
+    <item name="linear4" type="id" />
+    <item name="linear5" type="id" />
+    
+    <item name="relative1" type="id" />
+    <item name="relative2" type="id" />
+    <item name="relative3" type="id" />
+    <item name="relative4" type="id" />
+    <item name="relative5" type="id" />
+    
+    <item name="recyclerView" type="id" />
+    <item name="recyclerView1" type="id" />
+    <item name="recyclerView2" type="id" />
+    
+    <item name="refreshLayout" type="id" />
+    <item name="viewPager" type="id" />
+    
+    <item name="item1" type="id" />
+    <item name="item2" type="id" />
+    <item name="item3" type="id" />
+    <item name="item4" type="id" />
+    <item name="item5" type="id" />
+    <item name="item6" type="id" />
+    
+    <item name="menu1" type="id" />
+    <item name="menu2" type="id" />
+    <item name="menu3" type="id" />
+    <item name="menu4" type="id" />
+    <item name="menu5" type="id" />
+    <item name="empty_view" type="id" />
+    
+    <item name="webView" type="id" />
+    
+    <item name="toolbar" type="id" />
+    <item name="appbar" type="id" />
+    <item name="collapsing" type="id" />
+    <item name="collapsing_background" type="id" />
+    <item name="viewStub" type="id" />
+    <item name="fl_content" type="id" />
+    <item name="coordinator" type="id" />
+    <item name="tabLayout" type="id" />
+</resources>
