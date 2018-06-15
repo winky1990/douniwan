@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.winky.douniwan.R;
 import com.winky.douniwan.databinding.FragmentMainBinding;
+import com.winky.douniwan.tools.NavigationUtils;
 import com.winky.expand.basics.BaseSkinFragment;
 
 import androidx.navigation.Navigation;
@@ -22,7 +23,7 @@ public class MainFragment extends BaseSkinFragment {
         binding.tvMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_test1);
+                NavigationUtils.getInstance().navigate(getFragment(), R.id.fragment_test1);
             }
         });
     }

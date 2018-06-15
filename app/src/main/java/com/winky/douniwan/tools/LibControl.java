@@ -1,10 +1,15 @@
-package com.winky.expand.utils;
+package com.winky.douniwan.tools;
 
 import android.app.Application;
 import android.content.Context;
 
 import com.winky.expand.db.RealmUtils;
 import com.winky.expand.skin.SkinManager;
+import com.winky.expand.utils.CrashCollectUtils;
+import com.winky.expand.utils.FileUtils;
+import com.winky.expand.utils.Singleton;
+import com.winky.expand.utils.SysUtils;
+import com.winky.expand.utils.VoiceUtils;
 
 public class LibControl {
 
@@ -28,6 +33,10 @@ public class LibControl {
      */
     public void init(Application application) {
         context = application.getApplicationContext();
+        //注意相互依赖
+        SysUtils.getInstance().setContext(context);
+        FileUtils.getInstance().setContext(context);
+        NavigationUtils.getInstance().init(context);
         RealmUtils.getInstance().init(context);
         SkinManager.getInstance().init(context);
         CrashCollectUtils.getInstance();
@@ -47,5 +56,6 @@ public class LibControl {
         VoiceUtils.getInstance().release();//释放声音播放
         RealmUtils.getInstance().release();
         SkinManager.getInstance().release();
+        context = null;
     }
 }

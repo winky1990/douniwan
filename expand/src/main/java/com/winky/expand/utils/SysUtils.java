@@ -38,8 +38,10 @@ public class SysUtils {
      * 屏幕高度*/
     private static DisplayMetrics displayMetrics;
 
-    private Context getContext() {
-        return LibControl.getInstance().getContext();
+    private Context context;
+
+    public void setContext(Context context) {
+        this.context = context;
     }
 
     /**
@@ -65,7 +67,7 @@ public class SysUtils {
      */
     @SuppressLint("MissingPermission")
     public boolean isConnected() {
-        ConnectivityManager connectivity = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (null != connectivity) {
             NetworkInfo info = connectivity.getActiveNetworkInfo();
             if (null != info && info.isConnected()) {
@@ -82,7 +84,7 @@ public class SysUtils {
      */
     @SuppressLint("MissingPermission")
     public boolean isWifi() {
-        ConnectivityManager cm = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm == null)
             return false;
         return cm.getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_WIFI;
@@ -102,7 +104,7 @@ public class SysUtils {
             Object object = clazz.newInstance();
             int height = Integer.parseInt(clazz.getField("status_bar_height")
                     .get(object).toString());
-            STATUS_BAR_HEIGHT = getContext().getResources().getDimensionPixelSize(height);
+            STATUS_BAR_HEIGHT = context.getResources().getDimensionPixelSize(height);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -111,7 +113,7 @@ public class SysUtils {
 
     public DisplayMetrics getDisplayMetrics() {
         if (displayMetrics == null) {
-            WindowManager windowManager = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             Display display = windowManager.getDefaultDisplay();
             DisplayMetrics metrics = new DisplayMetrics();
             display.getMetrics(metrics);
@@ -146,7 +148,7 @@ public class SysUtils {
      * @return
      */
     public PackageInfo getPackageInfo() {
-        return getPackageInfo(getContext().getPackageName());
+        return getPackageInfo(context.getPackageName());
     }
 
     /**
@@ -156,7 +158,7 @@ public class SysUtils {
      */
     public PackageInfo getPackageInfo(String packageName) {
         try {
-            PackageManager packageManager = getContext().getPackageManager();
+            PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(packageName, Context.MODE_PRIVATE);
             return packageInfo;
         } catch (PackageManager.NameNotFoundException e) {
@@ -167,8 +169,8 @@ public class SysUtils {
 
     public ApplicationInfo getApplicationInfo() {
         try {
-            PackageManager packageManager = getContext().getPackageManager();
-            return packageManager.getApplicationInfo(getContext().getPackageName(), PackageManager.GET_META_DATA);
+            PackageManager packageManager = context.getPackageManager();
+            return packageManager.getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             return null;
@@ -184,7 +186,7 @@ public class SysUtils {
     public final String getIMEI() {
         try {
             //实例化TelephonyManager对象
-            TelephonyManager telephonyManager = (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             //获取IMEI号
             String imei;
             if (Build.VERSION.SDK_INT >= 26) {

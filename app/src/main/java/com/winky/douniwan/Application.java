@@ -3,7 +3,7 @@ package com.winky.douniwan;
 import android.os.Build;
 import android.os.Looper;
 
-import com.winky.expand.utils.LibControl;
+import com.winky.douniwan.tools.LibControl;
 
 public class Application extends android.app.Application {
 

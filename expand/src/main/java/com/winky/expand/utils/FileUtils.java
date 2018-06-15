@@ -30,8 +30,8 @@ public class FileUtils {
 
     private Context context;
 
-    private FileUtils() {
-        context = LibControl.getInstance().getContext();
+    public void setContext(Context context) {
+        this.context = context;
     }
 
     /**

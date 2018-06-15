@@ -5,9 +5,10 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.winky.douniwan.R;
-import com.winky.expand.basics.BaseSwipeBackFragment;
+import com.winky.douniwan.tools.NavigationUtils;
+import com.winky.expand.basics.BaseFragment;
 
-public class FragmentTest1 extends BaseSwipeBackFragment {
+public class FragmentTest1 extends BaseFragment {
     @Override
     public int bindLayout() {
         return R.layout.fragment_test1;
@@ -15,6 +16,17 @@ public class FragmentTest1 extends BaseSwipeBackFragment {
 
     @Override
     public void init(@Nullable View view, @Nullable Bundle savedInstanceState) {
-
+        view.findViewById(R.id.tv_test1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavigationUtils.getInstance().navigate(getFragment(), R.id.fragment_test2);
+            }
+        });
+        view.findViewById(R.id.tv_test2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavigationUtils.getInstance().navigateUp(getFragment());
+            }
+        });
     }
 }

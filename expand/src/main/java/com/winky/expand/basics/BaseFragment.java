@@ -13,11 +13,16 @@ import android.view.ViewGroup;
 
 import com.winky.expand.listener.IBinding;
 
+import java.lang.ref.WeakReference;
+
 public abstract class BaseFragment extends Fragment implements IBinding {
+
+    private WeakReference<Fragment> weakReference = null;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        weakReference = new WeakReference<Fragment>(this);
     }
 
     @Nullable
@@ -33,6 +38,18 @@ public abstract class BaseFragment extends Fragment implements IBinding {
     }
 
     public <T extends ViewDataBinding> T setDatabinding(View view) {
+
         return DataBindingUtil.bind(view);
+    }
+
+    public Fragment getFragment() {
+        return weakReference.get();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        weakReference.clear();
+        weakReference = null;
     }
 }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.winky.expand.R;
 import com.winky.expand.delegate.ISwipeBack;
 import com.winky.expand.view.layout.swipe.SwipeBackLayout;
 
@@ -14,23 +15,21 @@ public abstract class BaseSwipeBackFragment extends BaseSkinFragment implements 
 
     private SwipeBackLayout swipeBackLayout;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+//        swipeBackLayout = new SwipeBackLayout(getActivity());
+        swipeBackLayout = (SwipeBackLayout) View.inflate(getActivity(), R.layout.view_swipeback, container);
+        View view = inflater.inflate(bindLayout(), null, false);
+        swipeBackLayout.addView(view);
+        swipeBackLayout.attachToActivity(getActivity());
+        return swipeBackLayout;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        swipeBackLayout = new SwipeBackLayout(getActivity());
-        swipeBackLayout.addView(view);
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        swipeBackLayout.attachToActivity(getActivity());
     }
 
     @Override

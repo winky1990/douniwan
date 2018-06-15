@@ -10,9 +10,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
-            cmake {
-                cppFlags "-frtti -fexceptions"
-            }
+//            cmake {
+//                cppFlags "-frtti -fexceptions"
+//            }
         }
     }
     buildTypes {
@@ -22,9 +22,9 @@ android {
         }
     }
     externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
     }
     lintOptions {
         abortOnError false

@@ -5,9 +5,10 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.winky.douniwan.R;
+import com.winky.expand.basics.BaseFragment;
 import com.winky.expand.basics.BaseSwipeBackFragment;
 
-public class FragmentTest3 extends BaseSwipeBackFragment {
+public class FragmentTest3 extends BaseFragment {
     @Override
     public int bindLayout() {
         return R.layout.fragment_test3;
