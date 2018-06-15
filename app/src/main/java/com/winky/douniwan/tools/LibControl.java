@@ -36,7 +36,6 @@ public class LibControl {
         //注意相互依赖
         SysUtils.getInstance().setContext(context);
         FileUtils.getInstance().setContext(context);
-        NavigationUtils.getInstance().init(context);
         RealmUtils.getInstance().init(context);
         SkinManager.getInstance().init(context);
         CrashCollectUtils.getInstance();

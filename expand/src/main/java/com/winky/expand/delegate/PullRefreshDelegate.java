@@ -59,7 +59,7 @@ public class PullRefreshDelegate<T> {
         this.viewStub = viewStub;
     }
 
-    public void refreshData(List<T> datas, int count) {
+    public void refreshData(List<T> data, int count) {
         if (refreshLayout == null || recyclerView == null) {
             return;
         }
@@ -67,8 +67,8 @@ public class PullRefreshDelegate<T> {
         if (pageIndex == 1) {
             adapter.clear();
         }
-        if (datas != null) {
-            adapter.addAll(datas);
+        if (data != null) {
+            adapter.addAll(data);
         }
         if (adapter.getItemCount() >= count) {
             refreshLayout.finishLoadMoreWithNoMoreData();

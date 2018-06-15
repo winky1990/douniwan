@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:custom="http://schemas.android.com/android/custom">
-    
-    <LinearLayout
+    xmlns:custom="http://schemas.android.com/android/custom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:enable="true"
-            android:background="@color/colorPrimaryDark"
-            app:titleTextAppearance="@style/TextAppearance"
-            app:navigationIcon="@mipmap/ic_arrow_back_white_24dp" />
-        
-        <com.winky.expand.view.layout.AutoFrameLayout
-            android:id="@+id/fl_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-</layout>
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_title_blue"
+        app:navigationIcon="@mipmap/ic_arrow_back_white_24dp"
+        app:titleTextAppearance="@style/TextAppearance"
+        custom:enable="true" />
+
+    <com.winky.expand.view.layout.AutoFrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
