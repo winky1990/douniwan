@@ -59,24 +59,21 @@ public class NavigationUtils {
         controller = new NavController(context);
     }
 
-    public void navigate(Fragment fragment, @IdRes int fragmentId) {
-        navigate(fragment, fragmentId, null);
+    public void navigate(@NonNull View view, @IdRes int fragmentId) {
+        navigate(view, fragmentId, null);
     }
 
-    public void navigate(@NonNull Fragment fragment, @IdRes int fragmentId, @Nullable Bundle bundle) {
-        View view = (View) fragment.getView().getParent();
+    public void navigate(@NonNull View view, @IdRes int fragmentId, @Nullable Bundle bundle) {
         if (view != null)
             Navigation.findNavController(view).navigate(fragmentId, bundle, navOptions);
     }
 
-    public void navigate(@NonNull Fragment fragment, @IdRes int fragmentId, @Nullable Bundle bundle,NavOptions navOptions) {
-        View view = (View) fragment.getView().getParent();
+    public void navigate(@NonNull View view, @IdRes int fragmentId, @Nullable Bundle bundle, NavOptions navOptions) {
         if (view != null)
             Navigation.findNavController(view).navigate(fragmentId, bundle, navOptions);
     }
 
-    public void navigateUp(@NonNull Fragment fragment) {
-        View view = (View) fragment.getView().getParent();
+    public void navigateUp(@NonNull View view) {
         if (view != null)
             Navigation.findNavController(view).navigateUp();
     }

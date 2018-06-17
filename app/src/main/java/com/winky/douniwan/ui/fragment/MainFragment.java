@@ -23,7 +23,7 @@ public class MainFragment extends BaseSkinFragment {
         binding.tvMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavigationUtils.getInstance().navigate(getFragment(), R.id.fragment_test1);
+                NavigationUtils.getInstance().navigate(getView(), R.id.fragment_test1);
             }
         });
     }

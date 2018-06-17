@@ -1,40 +1,35 @@
 package com.winky.expand.basics;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import com.winky.expand.R;
-import com.winky.expand.delegate.ISwipeBack;
+import com.winky.expand.view.layout.swipe.ISwipeBack;
 import com.winky.expand.view.layout.swipe.SwipeBackLayout;
 
 public abstract class BaseSwipeBackFragment extends BaseSkinFragment implements ISwipeBack {
 
     private SwipeBackLayout swipeBackLayout;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        swipeBackLayout = new SwipeBackLayout(getActivity());
-        swipeBackLayout = (SwipeBackLayout) View.inflate(getActivity(), R.layout.view_swipeback, container);
+        swipeBackLayout = (SwipeBackLayout) inflater.inflate(R.layout.view_swipeback, container, false);
         View view = inflater.inflate(bindLayout(), null, false);
-        swipeBackLayout.addView(view);
-        swipeBackLayout.attachToActivity(getActivity());
+        swipeBackLayout.attachToSwipe(view);
         return swipeBackLayout;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
-    public SwipeBackLayout getSwipeBackLayout() {
-        return swipeBackLayout;
     }
 
     @Override
@@ -45,5 +40,10 @@ public abstract class BaseSwipeBackFragment extends BaseSkinFragment implements 
     @Override
     public void scrollToFinishActivity() {
         swipeBackLayout.scrollToFinishActivity();
+    }
+
+    @Override
+    public void detach(SwipeBackLayout swipeBackLayout) {
+
     }
 }

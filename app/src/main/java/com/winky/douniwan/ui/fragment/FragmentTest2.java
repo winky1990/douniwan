@@ -8,7 +8,7 @@ import com.winky.douniwan.R;
 import com.winky.expand.basics.BaseFragment;
 import com.winky.expand.basics.BaseSwipeBackFragment;
 
-public class FragmentTest2 extends BaseFragment {
+public class FragmentTest2 extends BaseSwipeBackFragment {
     @Override
     public int bindLayout() {
         return R.layout.fragment_test2;
