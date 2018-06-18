@@ -3,11 +3,11 @@ package com.winky.douniwan.ui.activity;
 import android.os.Bundle;
 
 import com.winky.douniwan.R;
-import com.winky.expand.basics.BaseSkinActivity;
+import com.winky.expand.basics.SkinActivity;
 
 import androidx.navigation.Navigation;
 
-public class MainActivity extends BaseSkinActivity {
+public class MainActivity extends SkinActivity {
 
     // Used to load the 'native-lib' library on application startup.
     static {

@@ -14,7 +14,7 @@ import com.winky.expand.skin.listener.ISkinUpdate;
  * @author winky
  * @date 2018/5/27
  */
-public class BaseSkinActivity extends BaseAppActivity implements ISkinUpdate {
+public class SkinActivity extends BaseAppActivity implements ISkinUpdate {
 
     private SkinInflaterFactory inflaterFactory;
 

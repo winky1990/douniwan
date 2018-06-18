@@ -9,7 +9,7 @@ import com.winky.expand.delegate.PullRefreshDelegate;
 
 import java.util.List;
 
-public abstract class BaseRefreshFragment<T> extends BaseSkinFragment implements IPullRefresh<T> {
+public abstract class RefreshFragment<T> extends SkinFragment implements IPullRefresh<T> {
 
     private PullRefreshDelegate<T> delegate = new PullRefreshDelegate(this);
 

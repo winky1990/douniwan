@@ -13,7 +13,7 @@ import com.winky.expand.R;
 import com.winky.expand.utils.SysUtils;
 import com.winky.expand.view.layout.AutoFrameLayout;
 
-public abstract class BaseToolbarFragment extends BaseSwipeBackFragment {
+public abstract class ToolbarFragment extends SwipeBackFragment {
     @Override
     public int bindLayout() {
         return R.layout.activity_base_bar;

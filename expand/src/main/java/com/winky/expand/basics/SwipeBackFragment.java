@@ -7,12 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.winky.douniwan.tools.NavigationUtils;
 import com.winky.expand.R;
 import com.winky.expand.view.layout.swipe.ISwipeBack;
 import com.winky.expand.view.layout.swipe.SwipeBackLayout;
 
-public abstract class BaseSwipeBackFragment extends BaseSkinFragment implements ISwipeBack {
+public abstract class SwipeBackFragment extends SkinFragment implements ISwipeBack {
 
     private SwipeBackLayout swipeBackLayout;
 
@@ -22,7 +21,6 @@ public abstract class BaseSwipeBackFragment extends BaseSkinFragment implements 
         swipeBackLayout = (SwipeBackLayout) inflater.inflate(R.layout.view_swipeback, container, false);
         View view = inflater.inflate(bindLayout(), null, false);
         swipeBackLayout.attachToSwipe(view);
-        swipeBackLayout.addSwipeListener(this);
         return swipeBackLayout;
     }
 
@@ -39,20 +37,5 @@ public abstract class BaseSwipeBackFragment extends BaseSkinFragment implements 
     @Override
     public void scrollToFinishActivity() {
         swipeBackLayout.scrollToFinishActivity();
-    }
-
-    @Override
-    public void onScrollStateChange(int state, float scrollPercent) {
-
-    }
-
-    @Override
-    public void onEdgeTouch(int edgeFlag) {
-
-    }
-
-    @Override
-    public void onScrollOverThreshold() {
-        NavigationUtils.getInstance().navigateUp(getView());
     }
 }

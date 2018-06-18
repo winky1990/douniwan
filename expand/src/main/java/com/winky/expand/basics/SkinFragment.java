@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 import com.winky.expand.skin.SkinInflaterFactory;
 
 
-public abstract class BaseSkinFragment extends BaseFragment {
+public abstract class SkinFragment extends BaseFragment {
 
     public final SkinInflaterFactory getSkinInflaterFactory() {
-        if (getActivity() instanceof BaseSkinActivity) {
-            return ((BaseSkinActivity) getActivity()).getInflaterFactory();
+        if (getActivity() instanceof SkinActivity) {
+            return ((SkinActivity) getActivity()).getInflaterFactory();
         }
         return null;
     }

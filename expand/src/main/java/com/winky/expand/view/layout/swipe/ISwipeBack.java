@@ -1,6 +1,6 @@
 package com.winky.expand.view.layout.swipe;
 
-public interface ISwipeBack extends SwipeBackLayout.SwipeListener {
+public interface ISwipeBack {
 
 
     void setSwipeBackEnable(boolean enable);

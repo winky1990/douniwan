@@ -7,9 +7,9 @@ import android.view.View;
 import com.winky.douniwan.R;
 import com.winky.douniwan.databinding.FragmentMainBinding;
 import com.winky.douniwan.tools.NavigationUtils;
-import com.winky.expand.basics.BaseSkinFragment;
+import com.winky.expand.basics.SkinFragment;
 
-public class MainFragment extends BaseSkinFragment {
+public class MainFragment extends SkinFragment {
     @Override
     public int bindLayout() {
         return R.layout.fragment_main;

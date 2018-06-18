@@ -6,12 +6,9 @@ import android.view.View;
 
 import com.winky.douniwan.R;
 import com.winky.douniwan.tools.NavigationUtils;
-import com.winky.expand.basics.BaseFragment;
-import com.winky.expand.basics.BaseSkinFragment;
-import com.winky.expand.basics.BaseSwipeBackFragment;
-import com.winky.expand.basics.BaseToolbarFragment;
+import com.winky.expand.basics.ToolbarFragment;
 
-public class FragmentTest1 extends BaseToolbarFragment {
+public class FragmentTest1 extends ToolbarFragment {
 
     @Override
     protected void initContent(@Nullable View view, @Nullable Bundle savedInstanceState) {
