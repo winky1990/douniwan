@@ -91,8 +91,6 @@ public class SwipeBackLayout extends FrameLayout {
      */
     private float mScrollThreshold = DEFAULT_SCROLL_THRESHOLD;
 
-    private Activity mActivity;
-
     private boolean mEnable = true;
 
     private View mContentView;
@@ -109,7 +107,10 @@ public class SwipeBackLayout extends FrameLayout {
      * The set of listeners to be sent events through.
      */
     private List<SwipeListener> mListeners;
-
+    /**
+     * 断开链接调用
+     */
+    private OnDetachListener detachListener;
     private Drawable mShadowLeft;
 
     private Drawable mShadowRight;
@@ -178,11 +179,12 @@ public class SwipeBackLayout extends FrameLayout {
     }
 
     /**
-     * Set up contentView which will be moved by user gesture
+     * Set up attachToSwipe which will be moved by user gesture
      *
      * @param view
      */
-    private void setContentView(View view) {
+    public void attachToSwipe(View view) {
+        addView(view);
         mContentView = view;
     }
 
@@ -277,7 +279,7 @@ public class SwipeBackLayout extends FrameLayout {
          * @see #STATE_DRAGGING
          * @see #STATE_SETTLING
          */
-        public void onScrollStateChange(int state, float scrollPercent);
+        void onScrollStateChange(int state, float scrollPercent);
 
         /**
          * Invoke when edge touched
@@ -287,12 +289,21 @@ public class SwipeBackLayout extends FrameLayout {
          * @see #EDGE_RIGHT
          * @see #EDGE_BOTTOM
          */
-        public void onEdgeTouch(int edgeFlag);
+        void onEdgeTouch(int edgeFlag);
 
         /**
          * Invoke when scroll percent over the threshold for the first time
          */
-        public void onScrollOverThreshold();
+        void onScrollOverThreshold();
+    }
+
+    public interface OnDetachListener {
+
+        void detach(SwipeBackLayout swipeBackLayout);
+    }
+
+    public void setDetachListener(OnDetachListener detachListener) {
+        this.detachListener = detachListener;
     }
 
     /**
@@ -458,23 +469,6 @@ public class SwipeBackLayout extends FrameLayout {
         }
     }
 
-    public void attachToActivity(Activity activity) {
-        mActivity = activity;
-        TypedArray a = activity.getTheme().obtainStyledAttributes(new int[]{
-                android.R.attr.windowBackground
-        });
-        int background = a.getResourceId(0, 0);
-        a.recycle();
-
-        ViewGroup decor = (ViewGroup) activity.getWindow().getDecorView();
-        ViewGroup decorChild = (ViewGroup) decor.getChildAt(0);
-        decorChild.setBackgroundResource(background);
-        decor.removeView(decorChild);
-        addView(decorChild);
-        setContentView(decorChild);
-        decor.addView(this);
-    }
-
     @Override
     public void computeScroll() {
         mScrimOpacity = 1 - mScrollPercent;
@@ -554,10 +548,10 @@ public class SwipeBackLayout extends FrameLayout {
                 }
             }
 
+
             if (mScrollPercent >= 1) {
-                if (!mActivity.isFinishing()) {
-                    mActivity.finish();
-                    mActivity.overridePendingTransition(0, 0);
+                if (detachListener != null) {
+                    detachListener.detach(SwipeBackLayout.this);
                 }
             }
         }

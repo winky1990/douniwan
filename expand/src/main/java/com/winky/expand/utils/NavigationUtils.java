@@ -1,15 +1,20 @@
-package com.winky.expand.utils;
+package com.winky.douniwan.tools;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.AnimRes;
 import android.support.annotation.AnimatorRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.winky.expand.R;
+import com.winky.expand.utils.Singleton;
 
+import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
@@ -27,6 +32,7 @@ public class NavigationUtils {
     }
 
     private NavOptions navOptions;
+    private NavController controller;
 
     private NavigationUtils() {
         navOptions = new NavOptions.Builder()
@@ -47,6 +53,10 @@ public class NavigationUtils {
                 .setPopEnterAnim(popEnterAnim)
                 .setPopExitAnim(popExitAnim)
                 .build();
+    }
+
+    public void init(Context context) {
+        controller = new NavController(context);
     }
 
     public void navigate(@NonNull View view, @IdRes int fragmentId) {

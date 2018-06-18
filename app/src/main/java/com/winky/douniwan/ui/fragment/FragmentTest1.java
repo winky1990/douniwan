@@ -5,13 +5,18 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.winky.douniwan.R;
-import com.winky.expand.basics.BaseToolbarFragment;
-import com.winky.expand.utils.NavigationUtils;
+import com.winky.douniwan.tools.NavigationUtils;
+import com.winky.expand.basics.BaseFragment;
+import com.winky.expand.basics.BaseSwipeBackFragment;
 
-public class FragmentTest1 extends BaseToolbarFragment {
+public class FragmentTest1 extends BaseSwipeBackFragment {
     @Override
-    protected void initContent(@Nullable View view, @Nullable Bundle savedInstanceState) {
-        setTitle("FragmentTest1");
+    public int bindLayout() {
+        return R.layout.fragment_test1;
+    }
+
+    @Override
+    public void init(@Nullable View view, @Nullable Bundle savedInstanceState) {
         view.findViewById(R.id.tv_test1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,10 +29,5 @@ public class FragmentTest1 extends BaseToolbarFragment {
                 NavigationUtils.getInstance().navigateUp(getView());
             }
         });
-    }
-
-    @Override
-    public int bindContentLayout() {
-        return R.layout.fragment_test1;
     }
 }
