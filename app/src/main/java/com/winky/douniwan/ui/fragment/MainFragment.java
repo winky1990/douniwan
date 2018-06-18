@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.winky.douniwan.R;
 import com.winky.douniwan.databinding.FragmentMainBinding;
+import com.winky.douniwan.tools.NavigationUtils;
 import com.winky.expand.basics.BaseSkinFragment;
-import com.winky.expand.utils.NavigationUtils;
 
 public class MainFragment extends BaseSkinFragment {
     @Override

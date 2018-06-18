@@ -8,12 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.winky.douniwan.tools.NavigationUtils;
 import com.winky.expand.R;
-import com.winky.expand.utils.NavigationUtils;
 import com.winky.expand.utils.SysUtils;
 import com.winky.expand.view.layout.AutoFrameLayout;
 
-public abstract class BaseToolbarFragment extends BaseSkinFragment {
+public abstract class BaseToolbarFragment extends BaseSwipeBackFragment {
     @Override
     public int bindLayout() {
         return R.layout.activity_base_bar;

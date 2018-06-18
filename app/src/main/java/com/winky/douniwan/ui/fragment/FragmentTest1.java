@@ -7,16 +7,15 @@ import android.view.View;
 import com.winky.douniwan.R;
 import com.winky.douniwan.tools.NavigationUtils;
 import com.winky.expand.basics.BaseFragment;
+import com.winky.expand.basics.BaseSkinFragment;
 import com.winky.expand.basics.BaseSwipeBackFragment;
+import com.winky.expand.basics.BaseToolbarFragment;
 
-public class FragmentTest1 extends BaseSwipeBackFragment {
-    @Override
-    public int bindLayout() {
-        return R.layout.fragment_test1;
-    }
+public class FragmentTest1 extends BaseToolbarFragment {
 
     @Override
-    public void init(@Nullable View view, @Nullable Bundle savedInstanceState) {
+    protected void initContent(@Nullable View view, @Nullable Bundle savedInstanceState) {
+        setTitle("FragmentTest1");
         view.findViewById(R.id.tv_test1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,5 +28,10 @@ public class FragmentTest1 extends BaseSwipeBackFragment {
                 NavigationUtils.getInstance().navigateUp(getView());
             }
         });
+    }
+
+    @Override
+    public int bindContentLayout() {
+        return R.layout.fragment_test1;
     }
 }

@@ -18,6 +18,7 @@ import java.lang.ref.WeakReference;
 public abstract class BaseFragment extends Fragment implements IBinding {
 
     private WeakReference<Fragment> weakReference = null;
+    private boolean VIEW_CREATED_PREVENT_REPEAT = true;
 
     @Override
     public void onAttach(Context context) {
@@ -34,7 +35,16 @@ public abstract class BaseFragment extends Fragment implements IBinding {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        init(view, savedInstanceState);
+        if (VIEW_CREATED_PREVENT_REPEAT) {
+            VIEW_CREATED_PREVENT_REPEAT = false;
+            init(view, savedInstanceState);
+        }
+
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     public <T extends ViewDataBinding> T setDatabinding(View view) {

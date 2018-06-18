@@ -7,15 +7,17 @@ import android.view.View;
 import com.winky.douniwan.R;
 import com.winky.expand.basics.BaseFragment;
 import com.winky.expand.basics.BaseSwipeBackFragment;
+import com.winky.expand.basics.BaseToolbarFragment;
 
-public class FragmentTest2 extends BaseSwipeBackFragment {
+public class FragmentTest2 extends BaseToolbarFragment {
+
     @Override
-    public int bindLayout() {
-        return R.layout.fragment_test2;
+    protected void initContent(@Nullable View view, @Nullable Bundle savedInstanceState) {
+        setTitle("FragmentTest2");
     }
 
     @Override
-    public void init(@Nullable View view, @Nullable Bundle savedInstanceState) {
-
+    public int bindContentLayout() {
+        return R.layout.fragment_test2;
     }
 }
