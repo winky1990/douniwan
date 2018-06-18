@@ -184,6 +184,7 @@ public class SwipeBackLayout extends FrameLayout {
      * @param view
      */
     public void attachToSwipe(View view) {
+        setBackgroundColor(ContextCompat.getColor(getContext(), android.R.color.holo_red_light));
         addView(view);
         mContentView = view;
     }
@@ -252,7 +253,7 @@ public class SwipeBackLayout extends FrameLayout {
      */
     public void addSwipeListener(SwipeListener listener) {
         if (mListeners == null) {
-            mListeners = new ArrayList<SwipeListener>();
+            mListeners = new ArrayList<>();
         }
         mListeners.add(listener);
     }
