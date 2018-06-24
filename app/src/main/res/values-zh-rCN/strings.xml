@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">豆泥丸</string>
+
+    <string name="title_login">登录</string>
+
+    <string name="main_home">首页</string>
+    <string name="main_chat">聊天</string>
+    <string name="main_mine">我的</string>
+
+    <string name="com_add">添加</string>
+</resources>

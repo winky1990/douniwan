@@ -7,16 +7,16 @@ import android.view.View;
 import com.winky.douniwan.R;
 import com.winky.expand.basics.ToolbarFragment;
 
-public class FragmentTest2 extends ToolbarFragment {
+public class LoginFragment extends ToolbarFragment {
 
     @Override
     protected void initContent(@Nullable View view, @Nullable Bundle savedInstanceState) {
-        setTitle("FragmentTest2");
+        setTitle(getString(R.string.title_login));
     }
 
     @Override
     public int bindContentLayout() {
-        return R.layout.fragment_test2;
+        return 0;
     }
 
 }

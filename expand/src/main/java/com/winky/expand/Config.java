@@ -23,4 +23,6 @@ public final class Config {
      * 即时生效换字体，是否采集textview
      */
     public static final boolean COLLECTION_TEXTVIEW = true;
+
+    public static final String NAVIGATION_ID = "navigation_id";
 }

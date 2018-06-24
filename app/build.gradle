@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'com.mob.sdk'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -42,4 +43,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':expand')
+}
+
+MobSDK {
+    appKey "25a9b44caa1c5"
+    appSecret "25c4d1e5db6858ef3438772587b200d7"
+    MobIM {}
 }

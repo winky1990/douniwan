@@ -1,22 +1,25 @@
-package com.winky.douniwan.tools;
+package com.winky.douniwan.tools.navigation;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.AnimRes;
 import android.support.annotation.AnimatorRes;
 import android.support.annotation.IdRes;
+import android.support.annotation.NavigationRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.View;
 
+import com.winky.douniwan.ui.activity.NavigationActivity;
+import com.winky.expand.Config;
 import com.winky.expand.R;
 import com.winky.expand.utils.Singleton;
 
-import androidx.navigation.NavController;
+import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
+
 import androidx.navigation.NavOptions;
-import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 public class NavigationUtils {
 
@@ -32,7 +35,6 @@ public class NavigationUtils {
     }
 
     private NavOptions navOptions;
-    private NavController controller;
 
     private NavigationUtils() {
         navOptions = new NavOptions.Builder()
@@ -55,26 +57,21 @@ public class NavigationUtils {
                 .build();
     }
 
-    public void init(Context context) {
-        controller = new NavController(context);
+    public void toNavigation(@NonNull Context context, @NavigationRes int navigationRes) {
+        Intent intent = new Intent(context, NavigationActivity.class);
+        intent.putExtra(Config.NAVIGATION_ID, navigationRes);
+        context.startActivity(intent);
     }
 
-    public void navigate(@NonNull View view, @IdRes int fragmentId) {
-        navigate(view, fragmentId, null);
+    public void jump(@NonNull Fragment fragment, @IdRes int navigationId) {
+        this.jump(fragment, navigationId, null);
     }
 
-    public void navigate(@NonNull View view, @IdRes int fragmentId, @Nullable Bundle bundle) {
-        if (view != null)
-            Navigation.findNavController(view).navigate(fragmentId, bundle, navOptions);
+    public void jump(@NonNull Fragment fragment, @IdRes int navigationId, @Nullable Bundle bundle) {
+        NavHostFragment.findNavController(fragment).navigate(navigationId, bundle, navOptions);
     }
 
-    public void navigate(@NonNull View view, @IdRes int fragmentId, @Nullable Bundle bundle, NavOptions navOptions) {
-        if (view != null)
-            Navigation.findNavController(view).navigate(fragmentId, bundle, navOptions);
-    }
-
-    public void navigateUp(@NonNull View view) {
-        if (view != null)
-            Navigation.findNavController(view).navigateUp();
+    public boolean goBack(Fragment fragment) {
+        return NavHostFragment.findNavController(fragment).navigateUp();
     }
 }

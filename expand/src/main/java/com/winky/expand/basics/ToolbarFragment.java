@@ -8,12 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.winky.douniwan.tools.NavigationUtils;
 import com.winky.expand.R;
 import com.winky.expand.utils.SysUtils;
 import com.winky.expand.view.layout.AutoFrameLayout;
 
-public abstract class ToolbarFragment extends SwipeBackFragment {
+import androidx.navigation.fragment.NavHostFragment;
+
+public abstract class ToolbarFragment extends SkinFragment {
     @Override
     public int bindLayout() {
         return R.layout.activity_base_bar;
@@ -40,15 +41,6 @@ public abstract class ToolbarFragment extends SwipeBackFragment {
 
     public void setTitle(@StringRes int resId) {
         this.setTitle(getContext().getText(resId));
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            NavigationUtils.getInstance().navigateUp(getView());
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     protected abstract void initContent(@Nullable View view, @Nullable Bundle savedInstanceState);

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:icon="@mipmap/ic_arrow_back_white_24dp"
+        android:title="@string/main_home"
+        android:orderInCategory="0"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_msg"
+        android:enabled="true"
+        android:icon="@mipmap/ic_arrow_forward_white_24dp"
+        android:orderInCategory="1"
+        android:title="@string/main_chat"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_mine"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="2"
+        android:title="@string/main_mine"
+        app:showAsAction="ifRoom" />
+</menu>

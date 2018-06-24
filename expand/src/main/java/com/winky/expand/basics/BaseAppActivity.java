@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
 import java.lang.ref.WeakReference;
+
+import androidx.navigation.fragment.NavHostFragment;
 
 /**
  * 上下文管理
@@ -30,4 +33,10 @@ public class BaseAppActivity extends AppCompatActivity {
         weakReference.clear();
         weakReference = null;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 }

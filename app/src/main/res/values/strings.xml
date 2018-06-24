@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">douniwan</string>
+    <string name="title_login">login</string>
+
+    <string name="main_home">home</string>
+    <string name="main_chat">chat</string>
+    <string name="main_mine">me</string>
+    <string name="com_add">add</string>
+
+    <string name="msg_message">消息</string>
+    <string name="msg_friends">好友</string>
+    <string name="msg_group">群组</string>
 </resources>

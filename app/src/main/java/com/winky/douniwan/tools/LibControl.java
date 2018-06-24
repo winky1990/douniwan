@@ -39,6 +39,8 @@ public class LibControl {
         RealmUtils.getInstance().init(context);
         SkinManager.getInstance().init(context);
         CrashCollectUtils.getInstance();
+
+//        MobSDK.init(context);
     }
 
     public Context getContext() {

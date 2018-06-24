@@ -10,4 +10,6 @@
     <color name="colorAccent">@color/colorTheme</color>
     
     <color name="lighter_gray">#ddd</color>
+
+
 </resources>
