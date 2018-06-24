@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mob.MobSDK;
+import com.mob.MobUser;
 import com.winky.douniwan.R;
 import com.winky.expand.basics.SkinFragment;
 import com.winky.expand.utils.GlideUtils;
@@ -20,7 +22,14 @@ public class MineFragment extends SkinFragment {
 
     @Override
     public void init(@Nullable View view, @Nullable Bundle savedInstanceState) {
-        GlideUtils.getInstance().LoadContextBlurBitmap(getContext(), "http://download.sdk.mob.com/e72/83d/e247e8b45bd557f70ac6dcc0cb.png", (ImageView) findViewById(R.id.image1));
-        ((TextView) view.findViewById(R.id.text1)).setText(SysUtils.getInstance().getIMEI());
+        MobSDK.getUser(new MobUser.OnUserGotListener() {
+            @Override
+            public void onUserGot(MobUser mobUser) {
+                GlideUtils.getInstance().LoadContextCircleBitmap(getContext(), mobUser.getAvatar(), (ImageView) findViewById(R.id.image1));
+                ((TextView) findViewById(R.id.text1)).setText(mobUser.getId());
+                ((TextView) findViewById(R.id.text2)).setText(mobUser.getNickName());
+
+            }
+        });
     }
 }

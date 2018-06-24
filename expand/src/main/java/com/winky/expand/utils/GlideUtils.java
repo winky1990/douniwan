@@ -139,24 +139,6 @@ public class GlideUtils {
     }
 
     /**
-     * Glide请求图片，会受到Fragment 生命周期控制。
-     *
-     * @param fragment
-     * @param path
-     * @param imageView
-     * @param placeid
-     * @param errorid
-     * @param bitmapOrgif 加载普通图片 或者GIF图片 ，GIF图片设置bitmap显示第一帧
-     */
-    public void LoadFragmentBitmap(android.app.Fragment fragment, String path, ImageView imageView, int placeid, int errorid, String bitmapOrgif) {
-        if (bitmapOrgif == null || bitmapOrgif.equals(LOAD_BITMAP)) {
-            Glide.with(fragment).load(path).placeholder(placeid).error(errorid).crossFade().into(imageView);
-        } else if (bitmapOrgif.equals(LOAD_GIF)) {
-            Glide.with(fragment).load(path).asGif().crossFade().into(imageView);
-        }
-    }
-
-    /**
      * Glide请求图片，会受到support.v4.app.Fragment生命周期控制。
      *
      * @param fragment
